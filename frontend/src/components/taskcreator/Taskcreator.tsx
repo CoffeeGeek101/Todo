@@ -1,8 +1,17 @@
 import React from 'react'
 import {PlusCircle} from 'lucide-react'
 import {motion} from 'framer-motion'
+import { useAppDispatch } from '../../redux/store'
+import { openModal } from '../../redux/CreateModalSlice'
 
 const Taskcreator : React.FC = () => {
+
+  const dispatch = useAppDispatch();
+
+  const handleOpen = () => {
+    dispatch(openModal());
+  }
+
   return (
     <motion.div
     initial={{opacity: 0}}
@@ -19,6 +28,7 @@ const Taskcreator : React.FC = () => {
             <motion.button 
             initial={{opacity: 0}}
             animate={{opacity: 1, transition: {duration: 0.5, delay: 1}}}
+            onClick={handleOpen}
             className='w-[180px] h-auto flex flex-row items-center justify-center gap-3 px-5 py-3 bg-zinc-800 rounded-lg shadow-lg text-white font-medium active:scale-95'>
                 <PlusCircle size={18}/>
                 <p>Create Task</p>

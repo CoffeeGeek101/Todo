@@ -9,10 +9,10 @@ function App() {
 
   return (
     <div className='w-[100vw] h-auto p-10 flex flex-col items-center bg-[#d9dfe0a4] gap-10 relative'>
-      <Topbar/>
-      <Taskcreator/>
-      {/* <CreateModal/> */}
-      <Tasklist/>
+        <Topbar/>
+        <Taskcreator/>
+        <CreateModal/>
+        <Tasklist/>
     </div>
   )
 }
