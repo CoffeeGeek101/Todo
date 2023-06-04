@@ -1,6 +1,7 @@
 import CreateModal from './components/taskcreator/CreateModal'
 import Taskcreator from './components/taskcreator/Taskcreator'
 import Tasklist from './components/tasklist/Tasklist'
+import UpdateModal from './components/tasklist/UpdateModal'
 import Topbar from './components/topbar/Topbar'
 import './index.css'
 
@@ -13,6 +14,7 @@ function App() {
         <Taskcreator/>
         <CreateModal/>
         <Tasklist/>
+        <UpdateModal/>
     </div>
   )
 }

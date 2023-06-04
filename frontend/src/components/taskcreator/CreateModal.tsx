@@ -52,10 +52,12 @@ const CreateModal = () => {
     }
     const handleSubmit = (e : React.FormEvent) => {
         e.preventDefault();
-        handleCreateTask(task)
+        handleCreateTask(task);
+        handleClose();
+        setInterval(() => {
+            window.location.reload();
+        }, 3000);
     }
-
-    // console.log(task)
 
     return (
         <motion.div
