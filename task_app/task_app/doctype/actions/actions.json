@@ -8,7 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "title",
-  "due_date",
+  "priority",
   "description",
   "status",
   "category",
@@ -21,11 +21,6 @@
    "in_list_view": 1,
    "label": "Title",
    "reqd": 1
-  },
-  {
-   "fieldname": "due_date",
-   "fieldtype": "Date",
-   "label": "Due Date"
   },
   {
    "fieldname": "description",
@@ -52,11 +47,16 @@
    "fieldtype": "Table",
    "label": "Task",
    "options": "Action Task"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Data",
+   "label": "Priority"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-03 15:05:27.616689",
+ "modified": "2023-06-04 08:35:14.637933",
  "modified_by": "Administrator",
  "module": "Task App",
  "name": "Actions",
