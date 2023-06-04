@@ -1,11 +1,18 @@
+import CreateModal from './components/taskcreator/CreateModal'
+import Taskcreator from './components/taskcreator/Taskcreator'
+import Tasklist from './components/tasklist/Tasklist'
+import Topbar from './components/topbar/Topbar'
 import './index.css'
 
 function App() {
 
 
   return (
-    <div className='bg-rose-500 text-white'>
-      <p>Hello</p>
+    <div className='w-[100vw] h-auto p-10 flex flex-col items-center bg-[#d9dfe0a4] gap-10 relative'>
+      <Topbar/>
+      <Taskcreator/>
+      {/* <CreateModal/> */}
+      <Tasklist/>
     </div>
   )
 }
