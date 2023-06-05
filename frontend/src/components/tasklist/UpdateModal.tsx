@@ -77,7 +77,7 @@ const UpdateModal = () => {
   return (
     <div className={`${updateModal ? '' : 'hidden'} w-full h-screen bg-[#2a2a2a3c]/10 fixed inset-0 backdrop-blur-sm`}>
       <div className='w-full h-full flex flex-row items-center justify-center'>
-        <div className='w-full h-auto md:w-[700px] md:h-[450px] bg-white rounded-md shadow-md flex flex-col p-10 items-start gap-3 overflow-y-scroll relative'>
+        <div className='w-full h-auto md:w-[600px] md:h-[500px] bg-white rounded-md shadow-md flex flex-col p-10 items-start gap-3 overflow-y-scroll relative'>
           <XSquare
             onClick={handleUpdateClose}
             size={28} className='absolute top-11 right-10 cursor-pointer' />
@@ -88,34 +88,38 @@ const UpdateModal = () => {
             <div className='flex flex-col md:flex-row gap-5'>
 
               <input onChange={(e) => setTitle(e.target.value)} placeholder='Title' value={title} className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />
-              <input onClick={() => setStatusOptions(!statusOptions)} placeholder='Status' value={status} readOnly className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />
-              <div className={` ${statusOptions ? '' : 'hidden'}  w-full md:w-[150px] h-auto bg-white flex flex-col shadow-md absolute p-2 items-center left-0 top-[220px] md:right-[15px] md:top-[20px] rounded-md cursor-pointer`}>
-                <p
-                  onClick={() => handleStatus('Todo')}
-                  className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>Todo</p>
-                <p
-                  onClick={() => handleStatus('Completed')}
-                  className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>Completed</p>
-                <p
-                  onClick={() => handleStatus('Archived')}
-                  className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>Archived</p>
+              <div className='relative'>
+                <input onClick={() => setStatusOptions(!statusOptions)} placeholder='Status' value={status} readOnly className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />
+                <div className={` ${statusOptions ? '' : 'hidden'}   w-[150px] h-auto bg-white flex flex-col shadow-md absolute p-2 items-center  sm:left-[60px] lg:right-0 top-[55px] rounded-md cursor-pointer`}>
+                  <p
+                    onClick={() => handleStatus('Todo')}
+                    className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>Todo</p>
+                  <p
+                    onClick={() => handleStatus('Completed')}
+                    className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>Completed</p>
+                  <p
+                    onClick={() => handleStatus('Archived')}
+                    className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>Archived</p>
+                </div>
               </div>
             </div>
             <textarea onChange={(e) => setDescription(e.target.value)} placeholder='Description' value={description} className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />
             <div className='flex flex-col md:flex-row gap-5'>
 
               <input onChange={(e) => setCategory(e.target.value)} placeholder='Category' value={category} className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />
-              <input onClick={() => setPriorityOptions(!priorityOptions)} placeholder='Priority' value={priority} readOnly className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />
-              <div className={` ${priorityOptions ? '' : 'hidden'} w-full md:w-[150px] h-auto bg-white flex flex-col shadow-md absolute p-2 items-center left-0 bottom-[-10px] rounded-md cursor-pointer`}>
-                <p
-                  onClick={() => handlePriority('Low')}
-                  className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>Low</p>
-                <p
-                  onClick={() => handlePriority('Medium')}
-                  className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>Medium</p>
-                <p
-                  onClick={() => handlePriority('High')}
-                  className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>High</p>
+              <div className='relative'>
+                <input onClick={() => setPriorityOptions(!priorityOptions)} placeholder='Priority' value={priority} readOnly className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />
+                <div className={` ${priorityOptions ? '' : 'hidden'} w-[150px] h-auto bg-white flex flex-col shadow-md absolute p-2 items-center sm:left-[60px] lg:right-0 top-[55px] rounded-md cursor-pointer`}>
+                  <p
+                    onClick={() => handlePriority('Low')}
+                    className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>Low</p>
+                  <p
+                    onClick={() => handlePriority('Medium')}
+                    className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>Medium</p>
+                  <p
+                    onClick={() => handlePriority('High')}
+                    className='hover:bg-slate-200/50 w-full text-center p-2 rounded-md'>High</p>
+                </div>
               </div>
             </div>
             <button
