@@ -69,7 +69,7 @@ const CreateModal = () => {
                 <motion.div 
                 initial = {{opacity: 0, scale: 0.8}}
                 animate={modalState ? { opacity: 1, scale: 1, transition: { duration: 0.2, delay: 0.5, ease:'easeIn' } } : {}}
-                className='w-[600px] h-[600px] bg-white rounded-md shadow-md flex flex-col p-10 items-center gap-10 overflow-y-scroll relative'>
+                className=' w-full h-auto md:w-[600px] md:h-[600px] bg-white rounded-md shadow-md flex flex-col p-10 items-center gap-10 overflow-y-scroll relative'>
 
                     <h2 className='text-2xl font-semibold'>Create your task</h2>
                     <XSquare
@@ -78,8 +78,8 @@ const CreateModal = () => {
 
                     <form 
                     onSubmit={handleSubmit}
-                    className='flex flex-col p-4 gap-6'>
-                        <div className='flex flex-row gap-5'>
+                    className=' w-full flex flex-col p-4 gap-6'>
+                        <div className='flex flex-col md:flex-row gap-5'>
 
                             <input onChange={(e)=>setTitle(e.target.value)} placeholder='Title' value={title} className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />
                             <input onClick={()=>setStatusOptions(!statusOptions)} placeholder='Status' value={status} readOnly className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />
@@ -96,7 +96,7 @@ const CreateModal = () => {
                             </div>
                         </div>
                         <textarea onChange={(e)=>setDescription(e.target.value)}  placeholder='Description' value={description} className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />
-                        <div className='flex flex-row gap-5'>
+                        <div className='flex flex-col md:flex-row gap-5'>
 
                             <input onChange={(e)=>setCategory(e.target.value)}  placeholder='Category' value={category} className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />
                             <input onClick={()=>setPriorityOptions(!priorityOptions)} placeholder='Priority' value={priority} readOnly className='bg-slate-100 p-3 rounded-md shadow-md focus:outline-none' />

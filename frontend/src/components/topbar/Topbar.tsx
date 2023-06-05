@@ -3,7 +3,6 @@ import {motion} from 'framer-motion'
 import { useState } from 'react';
 import api, { task } from '../../api/api';
 import axios from 'axios';
-import StatusbasedList from '../tasklist/StatusbasedList';
 import TaskCard from '../tasklist/TaskCard';
 import { useAppDispatch } from '../../redux/store';
 import { openUpdateModal } from '../../redux/UpdateModalSlice';
@@ -79,7 +78,7 @@ const handleArchive = async (task: task) => {
     initial={{opacity: 0, y: -50}}
     animate={{opacity: 1, y: 0, transition: {duration: 0.5, delay: 0.5, ease: 'easeInOut'}}}
     className='w-full h-auto p-5 flex flex-row justify-between items-center'>
-        <h2 className='text-4xl font-bold'>Todotracker.</h2>
+        <h2 className=' text-lg md:text-4xl font-bold'>Todotracker.</h2>
         <form 
         onSubmit={handleSearch}
         className='basis-6/12 rounded-md relative border-[1px] border-black/10'>
@@ -87,14 +86,14 @@ const handleArchive = async (task: task) => {
             <input
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder='Search for tasks'
-            className='w-full shadow-xl rounded-md bg-slate-100 h-[50px] p-3 px-10 focus: outline-none'/>
-            <div className='absolute bg-slate-400/50 rounded-md py-1 px-2 flex flex-row items-center gap-1 right-5 top-[12px]'>
+            className='w-full shadow-xl rounded-md bg-slate-100 h-[40px] md:h-[50px] p-3 px-10 focus: outline-none'/>
+            <div className=' hidden absolute bg-slate-400/50 rounded-md py-1 px-2 md:flex flex-row items-center gap-1 right-5 top-[12px]'>
             <CornerDownLeft size={18}/>
             <Keyboard size={15} color='#000000'/>
           </div>
           {
             filteredTasks.length > 0 &&
-            <div className={`${searchActive ? '' : 'hidden'} absolute w-[400px] h-[600px] bg-slate-600/50 backdrop-blur-sm shadow-lg overflow-y-scroll p-2 top-20 right-0 rounded-md`}>
+            <div className={`${searchActive ? '' : 'hidden'} absolute w-screen md:w-[400px] h-[600px] bg-slate-600/50 backdrop-blur-sm shadow-lg overflow-y-scroll p-2 top-20 right-[-63px] md:right-0 rounded-md`}>
               <div 
               onClick={() => setSearchActive(false)}
               className='absolute  bg-black/50 p-2 rounded-md text-white cursor-pointer'><X/></div>

@@ -12,7 +12,7 @@ function* tasksFetcher(){
     }catch(err){
         yield put(fetchingTasksFailed());
     }
-};
+}
 
 function* tasksUpdater(action : any){
     try{

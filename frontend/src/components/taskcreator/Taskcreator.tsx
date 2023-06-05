@@ -22,8 +22,8 @@ const Taskcreator : React.FC = () => {
             initial={{opacity: 0, y: 50}}
             animate={{opacity: 1, y: 0, transition: {duration: 0.5, delay: 0.5}}}
             className='flex flex-col items-center gap-2'>
-                <h1 className='text-5xl font-extrabold'>Manage your Productivity</h1>
-                <p className='text-2xl font-thin tracking-[5px]'>get the most out of your day</p>
+                <h1 className='text-3xl md:text-3xl lg:text-5xl font-extrabold'>Manage your Productivity</h1>
+                <p className='text-lg md:text-2xl font-thin tracking-[5px]'>get the most out of your day</p>
             </motion.div>
             <motion.button 
             initial={{opacity: 0}}

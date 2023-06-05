@@ -11,8 +11,6 @@ const Tasklist : React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchingTasks());
-
-    return () => {}
   },[dispatch]);
 
   const tasklist = useAppSelector(state => state.task.tasks);
@@ -23,7 +21,7 @@ const Tasklist : React.FC = () => {
     <motion.div 
     initial={{opacity: 0, y: -50}}
     animate={{opacity: 1, y: 0, transition: {duration: 0.5, delay: 1.2, ease: 'easeOut'}}}
-    className='w-[100vw] h-auto flex flex-row justify-center'>
+    className='w-[100vw] h-auto flex flex-col items-center lg:items-start gap-5 md:gap-0 lg:flex-row justify-center'>
         <StatusbasedList status='Todo' tasklist={tasklist}/>
         <StatusbasedList status='Completed' tasklist={tasklist} />
         <StatusbasedList status='Archived' tasklist={tasklist}/>
